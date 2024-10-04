@@ -13,7 +13,7 @@ class TodoListViewController: UITableViewController {
     var itemArray = [Item]()
     
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
-//    print(dataFilePath)
+    //    print(dataFilePath)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +29,10 @@ class TodoListViewController: UITableViewController {
         let newItem3 = Item()
         newItem3.title = "Destroy Armageddon"
         itemArray.append(newItem3)
-
-              
-//        if let items = defaults.array(forKey: "TodoListArray") as? [Item] {
-//            itemArray = items
-//        }
+        
+        //        if let items = defaults.array(forKey: "TodoListArray") as? [Item] {
+        //            itemArray = items
+        //        }
         
         
     }
@@ -45,7 +44,7 @@ class TodoListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                      
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
         
         let item  = itemArray[indexPath.row]
@@ -55,12 +54,12 @@ class TodoListViewController: UITableViewController {
         // refactor larger if else with Ternary Operator
         // value = condition ? valueIfTrue : valueOIfFalse
         cell.accessoryType = item.done ? .checkmark : .none
-                
-//        if itemArray[indexPath.row].done == true {
-//            cell.accessoryType = .checkmark
-//        } else {
-//            cell.accessoryType = .none
-//        }
+        
+        //        if itemArray[indexPath.row].done == true {
+        //            cell.accessoryType = .checkmark
+        //        } else {
+        //            cell.accessoryType = .none
+        //        }
         
         return cell
     }
@@ -69,14 +68,14 @@ class TodoListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // refactor for larger if else
+        // refactor for larger if else tio easily flip the Boolean
         itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         
-//        if itemArray[indexPath.row].done == false {
-//            itemArray[indexPath.row].done = true
-//        } else {
-//            itemArray[indexPath.row].done = false
-//        }
+        //        if itemArray[indexPath.row].done == false {
+        //            itemArray[indexPath.row].done = true
+        //        } else {
+        //            itemArray[indexPath.row].done = false
+        //        }
         
         if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
             tableView.cellForRow(at: indexPath)?.accessoryType = .none
@@ -84,14 +83,14 @@ class TodoListViewController: UITableViewController {
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         }
         
-        tableView.reloadData()
+        saveItems()
         
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
     
     // Mark - Add New Items
-        
+    
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
         var textField = UITextField()
@@ -106,18 +105,7 @@ class TodoListViewController: UITableViewController {
             
             self.itemArray.append(newItem)
             
-            let encoder = PropertyListEncoder()
-            
-            do {
-                let data = try encoder.encode(self.itemArray)
-                try data.write(to: self.dataFilePath!)
-            } catch {
-                print("Error encoding itemArray, \(error)")
-            }
-            
-            
-            self.tableView.reloadData()
-            
+            self.saveItems()
             
         }
         
@@ -129,13 +117,27 @@ class TodoListViewController: UITableViewController {
         alert.addAction(action)
         
         self.present(alert, animated: true, completion: nil)
-    
+        
     }
     
     
+    // Mark - Model Manuppulation Methods
     
-    
-    
+    func saveItems() {
+        
+        let encoder = PropertyListEncoder()
+        
+        do {
+            let data = try encoder.encode(itemArray)
+            try data.write(to: dataFilePath!)
+        } catch {
+            print("Error encoding itemArray, \(error)")
+        }
+        
+        self.tableView.reloadData()
+    }
     
 }
+
+
 
