@@ -107,7 +107,7 @@ class TodoListViewController: UITableViewController {
     }
     
     
-    // Mark - Model Manuppulation Methods
+    // Mark - Model Manupulation Methods
     
     func saveItems() {
         
