@@ -9,6 +9,48 @@
     </dependencies>
     <scenes>
         <!--Todoey-->
+        <scene sceneID="BzN-Tk-QrO">
+            <objects>
+                <tableViewController id="9cL-Ho-fDg" customClass="CategoryViewController" customModule="Todoey" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="B9E-oU-Oss">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="749"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" id="62M-RU-xYm">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="62M-RU-xYm" id="Gvc-7l-OzM">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9cL-Ho-fDg" id="HKS-3h-FWQ"/>
+                            <outlet property="delegate" destination="9cL-Ho-fDg" id="SYV-Wp-dCu"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Todoey" id="QlH-m9-NtO">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="0Bi-tr-vrb">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ccz-3G-hPA">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButton:" destination="9cL-Ho-fDg" id="E43-tv-FGO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="tIY-iR-eB3" kind="show" identifier="goToItems" id="Rts-8U-O7E"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4sd-cT-45H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="648" y="-101"/>
+        </scene>
+        <!--Items-->
         <scene sceneID="QUF-R4-efb">
             <objects>
                 <tableViewController id="tIY-iR-eB3" customClass="TodoListViewController" customModule="Todoey" customModuleProvider="target" sceneMemberID="viewController">
@@ -39,7 +81,7 @@
                             <outlet property="delegate" destination="tIY-iR-eB3" id="afa-aj-lwi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Todoey" id="ZtA-Le-nlT">
+                    <navigationItem key="navigationItem" title="Items" id="ZtA-Le-nlT">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="s1J-En-22m">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -50,7 +92,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K57-dt-Mg9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="939.69465648854953" y="-11.267605633802818"/>
+            <point key="canvasLocation" x="1427" y="-101"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="m86-Yl-1x0">
@@ -71,12 +113,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="tIY-iR-eB3" kind="relationship" relationship="rootViewController" id="Ji2-Qm-S2I"/>
+                        <segue destination="9cL-Ho-fDg" kind="relationship" relationship="rootViewController" id="HaM-Xo-VH2"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bpk-Lb-H4n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12.977099236641221" y="-11.267605633802818"/>
+            <point key="canvasLocation" x="-112" y="-101"/>
         </scene>
     </scenes>
     <resources>
@@ -84,7 +126,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
