@@ -57,7 +57,7 @@ class TodoListViewController: UITableViewController {
             do {
                 try realm.write {
                     // if youn want to delete the item
-//                    realm.delete(item)
+                    //                    realm.delete(item)
                     // if you want to check the item done
                     item.done = !item.done
                 }
@@ -123,24 +123,26 @@ class TodoListViewController: UITableViewController {
 
 
 // MARK: - Search bar methods
-extension TodoListViewController: UISearchBarDelegate {
 
+extension TodoListViewController: UISearchBarDelegate {
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-     
+        
+        // filter via predicate "title CONTAINS[cd] %@"
         todoItems = todoItems?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
         
         tableView.reloadData()
     }
     
-
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text?.count == 0 {
             loadItems()
-
+            
             DispatchQueue.main.async {
                 searchBar.resignFirstResponder()
             }
-
+            
         }
     }
 }

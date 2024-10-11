@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 
+// Object comes from realm
 class Category: Object {
     @objc dynamic var name: String = ""
     // forward relationship
