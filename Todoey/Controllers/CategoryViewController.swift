@@ -23,8 +23,15 @@ class CategoryViewController: SwipeTableViewController {
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
         loadCategories()
-        
         tableView.separatorStyle = .none
+    
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        guard let navBar = navigationController?.navigationBar else {
+            fatalError("Navigation Controller does net exist.")
+        }
+        navBar.backgroundColor = UIColor.orange
     }
     
     //MARK: - TableView Datasource Methods

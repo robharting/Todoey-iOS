@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3620DAB12CB9757700412B0C /* SwipeCellKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3620DAB02CB9757700412B0C /* SwipeCellKit */; };
+		363CBB222CBC02DF00525E5F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 363CBB212CBC02DF00525E5F /* README.md */; };
 		366E2EB52CBBD75200E2F672 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E2EB42CBBD75200E2F672 /* SwipeTableViewController.swift */; };
 		3676ECB62CB97D80009D3E36 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 36E1406D2CB6BAD200F406B8 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		36D28F3F2CB3BE6B000E371D /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D28F3E2CB3BE6B000E371D /* CategoryViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		363CBB212CBC02DF00525E5F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		366E2EB42CBBD75200E2F672 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		36D28F3E2CB3BE6B000E371D /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		36E140712CB79A6F00F406B8 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		EB2BE4ED239524DB00FB933B = {
 			isa = PBXGroup;
 			children = (
+				363CBB212CBC02DF00525E5F /* README.md */,
 				EB2BE4F8239524DB00FB933B /* Todoey */,
 				EB2BE4F7239524DB00FB933B /* Products */,
 			);
@@ -197,6 +200,7 @@
 			files = (
 				EB2BE506239524DC00FB933B /* LaunchScreen.storyboard in Resources */,
 				EB2BE503239524DC00FB933B /* Assets.xcassets in Resources */,
+				363CBB222CBC02DF00525E5F /* README.md in Resources */,
 				EB2BE501239524DB00FB933B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
