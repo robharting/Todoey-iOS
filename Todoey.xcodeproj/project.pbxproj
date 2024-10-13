@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3620DAB12CB9757700412B0C /* SwipeCellKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3620DAB02CB9757700412B0C /* SwipeCellKit */; };
+		366E2EB52CBBD75200E2F672 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366E2EB42CBBD75200E2F672 /* SwipeTableViewController.swift */; };
+		3676ECB62CB97D80009D3E36 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 36E1406D2CB6BAD200F406B8 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		36D28F3F2CB3BE6B000E371D /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D28F3E2CB3BE6B000E371D /* CategoryViewController.swift */; };
 		36E1406E2CB6BAD200F406B8 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 36E1406D2CB6BAD200F406B8 /* RealmSwift */; };
 		36E140722CB79A6F00F406B8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E140712CB79A6F00F406B8 /* Item.swift */; };
@@ -19,7 +21,22 @@
 		EB2BE506239524DC00FB933B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB2BE504239524DC00FB933B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3676ECB72CB97D80009D3E36 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3676ECB62CB97D80009D3E36 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		366E2EB42CBBD75200E2F672 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		36D28F3E2CB3BE6B000E371D /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		36E140712CB79A6F00F406B8 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		36E140732CB79A7C00F406B8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -59,6 +76,7 @@
 			children = (
 				36D28F3E2CB3BE6B000E371D /* CategoryViewController.swift */,
 				EB2BE4FD239524DB00FB933B /* TodoListViewController.swift */,
+				366E2EB42CBBD75200E2F672 /* SwipeTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -119,6 +137,7 @@
 				EB2BE4F2239524DB00FB933B /* Sources */,
 				EB2BE4F3239524DB00FB933B /* Frameworks */,
 				EB2BE4F4239524DB00FB933B /* Resources */,
+				3676ECB72CB97D80009D3E36 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,6 +211,7 @@
 				36E140722CB79A6F00F406B8 /* Item.swift in Sources */,
 				36D28F3F2CB3BE6B000E371D /* CategoryViewController.swift in Sources */,
 				EB2BE4FE239524DB00FB933B /* TodoListViewController.swift in Sources */,
+				366E2EB52CBBD75200E2F672 /* SwipeTableViewController.swift in Sources */,
 				EB2BE4FA239524DB00FB933B /* AppDelegate.swift in Sources */,
 				36E140742CB79A7C00F406B8 /* Category.swift in Sources */,
 			);
