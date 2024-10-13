@@ -47,6 +47,7 @@ class TodoListViewController: SwipeTableViewController {
         }
         
         cell.backgroundColor = UIColor.systemBlue
+        cell.textLabel?.textColor = UIColor.white
         
         return cell
     }
